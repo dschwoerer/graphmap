@@ -269,8 +269,8 @@ int GraphMap::RNAFilterClusters_(MappingData* mapping_data, std::vector<std::sha
 		LOG_DEBUG_SPEC("Initializing the dp and backtrack matrices.\n");
 	#endif
 
-  int **dp = (int **) calloc(STRANDS, sizeof(int));
-  int **backtrack = (int **) calloc(STRANDS, sizeof(int));
+  int **dp = (int **) calloc(STRANDS, sizeof(int*));
+  int **backtrack = (int **) calloc(STRANDS, sizeof(int*));
   for (int strand = 0; strand < STRANDS; strand++) {
   	dp[strand] = (int *) calloc(MAXN, sizeof(int));
   	backtrack[strand] = (int *) calloc(MAXN, sizeof(int));
